@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Employee Directory</h1>
+
+    <div class="controls">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search employee by name"
+        >
+
+        <select id="departmentFilter">
+
+            <option value="All">All Departments</option>
+            <option value="HR">HR</option>
+            <option value="CRM">CRM</option>
+            <option value="Finance">Finance</option>
+            <option value="Development">Development</option>
+
+        </select>
+
+    </div>
+
+    <div id="employeeContainer" class="employee-container"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
