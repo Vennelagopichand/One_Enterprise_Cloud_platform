@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <header>
+
+            <h1 id="welcome"></h1>
+
+            <button onclick="logout()">Logout</button>
+
+        </header>
+
+        <div class="cards">
+
+            <a href="employee.html" class="card">
+                <h2>👨‍💼</h2>
+                <h3>Employee Management</h3>
+            </a>
+
+            <a href="attendance.html" class="card">
+                <h2>📅</h2>
+                <h3>Attendance</h3>
+            </a>
+
+            <a href="leave.html" class="card">
+                <h2>📝</h2>
+                <h3>Leave</h3>
+            </a>
+
+            <a href="payroll.html" class="card">
+                <h2>💰</h2>
+                <h3>Payroll</h3>
+            </a>
+
+            <a href="crm.html" class="card">
+                <h2>📊</h2>
+                <h3>CRM</h3>
+            </a>
+
+            <a href="finance.html" class="card">
+                <h2>🏦</h2>
+                <h3>Finance</h3>
+            </a>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let name = localStorage.getItem("employeeName");
+
+        if (!name) {
+            window.location.href = "login.html";
+        }
+
+        document.getElementById("welcome").innerText =
+            "Welcome " + name;
+
+        function logout() {
+
+            localStorage.removeItem("employeeName");
+
+            window.location.href = "login.html";
+        }
+
+    </script>
+
+</body>
+
+</html>
