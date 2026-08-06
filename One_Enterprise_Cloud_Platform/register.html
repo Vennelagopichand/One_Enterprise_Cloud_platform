@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+
+    <link rel="stylesheet" href="css/register.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="left-panel">
+
+            <div class="logo">
+                <i class="fa-solid fa-cloud"></i>
+                <h1>OneCloud</h1>
+            </div>
+
+            <h2>Employee Registration</h2>
+
+            <p>
+                Register yourself to access HRMS, CRM, Payroll,
+                Analytics and all enterprise modules.
+            </p>
+
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11?w=900"
+                alt="Employees">
+        </div>
+
+        <div class="right-panel">
+
+            <form id="registerForm">
+
+                <h2>Create Account</h2>
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>Employee ID</label>
+                        <input type="text" id="employeeId" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Mobile Number</label>
+                        <input type="tel" id="mobile" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Department</label>
+
+                        <select id="department">
+
+                            <option value="">Select</option>
+                            <option>HR</option>
+                            <option>CRM</option>
+                            <option>Finance</option>
+                            <option>Development</option>
+                            <option>Marketing</option>
+
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Designation</label>
+                        <input type="text" id="designation">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Date of Joining</label>
+                        <input type="date" id="joiningDate">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label>Confirm Password</label>
+                        <input type="password" id="confirmPassword" required>
+                    </div>
+
+                </div>
+
+                <div class="buttons">
+
+                    <button type="submit" class="register-btn">
+                        Register
+                    </button>
+
+                    <button type="reset" class="reset-btn">
+                        Reset
+                    </button>
+
+                </div>
+
+                <p id="message"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="js/register.js"></script>
+
+</body>
+</html>

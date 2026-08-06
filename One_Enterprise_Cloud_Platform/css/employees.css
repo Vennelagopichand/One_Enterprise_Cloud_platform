@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f1f5f9;
+
+    min-height: 100vh;
+}
+
+/* Header */
+
+.header {
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #2563eb
+    );
+
+    color: white;
+
+    padding: 20px 50px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.logo i {
+
+    font-size: 30px;
+}
+
+.back-btn {
+
+    text-decoration: none;
+
+    background: white;
+
+    color: #2563eb;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+/* Search */
+
+.controls {
+
+    padding: 30px 50px;
+
+    display: flex;
+
+    gap: 20px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+
+.controls input,
+.controls select {
+
+    padding: 14px;
+
+    width: 320px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 16px;
+}
+
+.controls input:focus,
+.controls select:focus {
+
+    border-color: #2563eb;
+}
+
+/* Cards */
+
+.employee-container {
+
+    padding: 30px 50px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+
+    width: 100px;
+
+    height: 100px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-bottom: 15px;
+}
+
+.card h3 {
+
+    color: #0f172a;
+
+    margin-bottom: 10px;
+}
+
+.card p {
+
+    margin: 6px 0;
+
+    color: #555;
+}
+
+.status {
+
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding: 8px 16px;
+
+    border-radius: 20px;
+
+    background: #22c55e;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+
+    .employee-container {
+
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+
+    .employee-container {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .employee-container {
+
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+}

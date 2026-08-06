@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Directory</title>
+
+    <link rel="stylesheet" href="css/employees.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h2>Employee Directory</h2>
+
+        </div>
+
+        <a href="dashboard.html" class="back-btn">
+            Back to Dashboard
+        </a>
+
+    </header>
+
+    <!-- Search Section -->
+
+    <section class="controls">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search employee by name...">
+
+        <select id="departmentFilter">
+
+            <option value="all">All Departments</option>
+
+            <option value="HR">HR</option>
+
+            <option value="CRM">CRM</option>
+
+            <option value="Finance">Finance</option>
+
+            <option value="Development">Development</option>
+
+        </select>
+
+    </section>
+
+    <!-- Employee Cards -->
+
+    <section id="employeeContainer" class="employee-container">
+
+    </section>
+
+    <script src="js/employees.js"></script>
+
+</body>
+
+</html>

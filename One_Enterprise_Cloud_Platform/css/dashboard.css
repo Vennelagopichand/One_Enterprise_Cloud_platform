@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f1f5f9;
+
+    display: flex;
+
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+
+    width: 270px;
+
+    background: linear-gradient(
+        180deg,
+        #0f172a,
+        #1d4ed8
+    );
+
+    color: white;
+
+    padding: 30px 20px;
+}
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 40px;
+}
+
+.logo i {
+
+    font-size: 35px;
+}
+
+.logo h2 {
+
+    font-size: 28px;
+}
+
+.sidebar ul {
+
+    list-style: none;
+}
+
+.sidebar ul li {
+
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+
+    text-decoration: none;
+
+    color: white;
+
+    display: block;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar ul li i {
+
+    margin-right: 10px;
+}
+
+/* MAIN */
+
+.main-content {
+
+    flex: 1;
+
+    padding: 30px;
+}
+
+/* TOP BAR */
+
+.top-bar {
+
+    background: white;
+
+    padding: 20px 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.top-bar h1 {
+
+    color: #0f172a;
+}
+
+.top-bar button {
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #ef4444;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.top-bar button:hover {
+
+    background: #dc2626;
+}
+
+/* CARDS */
+
+.cards {
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+
+    text-decoration: none;
+
+    background: white;
+
+    color: #333;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.card i {
+
+    font-size: 50px;
+
+    color: #2563eb;
+
+    margin-bottom: 20px;
+}
+
+.card h3 {
+
+    margin-bottom: 12px;
+}
+
+.card p {
+
+    color: #666;
+
+    line-height: 1.6;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+    .cards {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sidebar {
+
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+
+        flex-direction: column;
+    }
+
+    .sidebar {
+
+        width: 100%;
+    }
+
+    .cards {
+
+        grid-template-columns: 1fr;
+    }
+
+    .top-bar {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+}

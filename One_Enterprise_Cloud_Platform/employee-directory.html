@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="OneCloud Employee Directory"
+    >
+
+    <title>Employee Directory | OneCloud</title>
+
+    <!-- Employee Directory CSS -->
+    <link
+        rel="stylesheet"
+        href="css/employee-directory.css"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- ==============================
+         TOP NAVIGATION
+    =============================== -->
+
+    <header class="topbar">
+
+        <a
+            href="dashboard.html"
+            class="brand"
+        >
+            <i class="fa-solid fa-cloud"></i>
+
+            <span>OneCloud</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+
+            <a href="employee-management-update.html">
+                Employee Management
+            </a>
+
+            <a
+                href="employee-directory.html"
+                class="active"
+                aria-current="page"
+            >
+                Directory
+            </a>
+
+            <a href="employee-attendance.html">
+                Attendance
+            </a>
+
+        </nav>
+
+    </header>
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+
+    <main class="page-shell">
+
+        <!-- Page heading -->
+
+        <section class="hero-panel">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    HRMS MODULE
+                </span>
+
+                <h1>Employee Directory</h1>
+
+                <p>
+                    Browse, search, filter and sort employee
+                    records across the organization.
+                </p>
+
+            </div>
+
+            <!-- Total employee counter -->
+
+            <article class="total-card">
+
+                <div class="total-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <div>
+
+                    <small>Total Employees</small>
+
+                    <strong id="employeeCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- ==============================
+             SEARCH, FILTER AND SORT
+        =============================== -->
+
+        <section
+            class="filters-card"
+            aria-label="Employee directory controls"
+        >
+
+            <!-- Search -->
+
+            <div class="search-field">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search by employee name or ID"
+                    autocomplete="off"
+                    aria-label="Search employees by name or ID"
+                >
+
+            </div>
+
+            <!-- Department filter -->
+
+            <select
+                id="departmentFilter"
+                aria-label="Filter employees by department"
+            >
+                <option value="all">
+                    All Departments
+                </option>
+            </select>
+
+            <!-- Designation filter -->
+
+            <select
+                id="designationFilter"
+                aria-label="Filter employees by designation"
+            >
+                <option value="all">
+                    All Designations
+                </option>
+            </select>
+
+            <!-- Status filter -->
+
+            <select
+                id="statusFilter"
+                aria-label="Filter employees by status"
+            >
+                <option value="all">
+                    All Statuses
+                </option>
+
+                <option value="Active">
+                    Active
+                </option>
+
+                <option value="Inactive">
+                    Inactive
+                </option>
+            </select>
+
+            <!-- Sort options -->
+
+            <select
+                id="sortFilter"
+                aria-label="Sort employee records"
+            >
+                <option
+                    value="id-asc"
+                    selected
+                >
+                    Employee ID Ascending
+                </option>
+
+                <option value="id-desc">
+                    Employee ID Descending
+                </option>
+
+                <option value="name-asc">
+                    Name A–Z
+                </option>
+
+                <option value="name-desc">
+                    Name Z–A
+                </option>
+            </select>
+
+            <!-- Reset button -->
+
+            <button
+                type="button"
+                id="resetFilters"
+            >
+                <i class="fa-solid fa-rotate-left"></i>
+
+                Reset Filters
+            </button>
+
+        </section>
+
+        <!-- ==============================
+             EMPLOYEE CARDS
+        =============================== -->
+
+        <section
+            id="employeeGrid"
+            class="employee-grid"
+            aria-live="polite"
+            aria-label="Employee records"
+        >
+
+            <!--
+                JavaScript dynamically inserts
+                employee cards here.
+            -->
+
+        </section>
+
+        <!-- ==============================
+             EMPTY STATE
+        =============================== -->
+
+        <section
+            id="emptyState"
+            class="empty-state hidden"
+            aria-live="polite"
+        >
+
+            <i class="fa-solid fa-user-slash"></i>
+
+            <h2>No employees found</h2>
+
+            <p>
+                Try changing the search text,
+                filters or sorting options.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- ==============================
+         JAVASCRIPT FILES
+    =============================== -->
+
+    <!-- Shared employee array must load first -->
+
+    <script src="js/employee-data.js"></script>
+
+    <!-- Employee directory functionality -->
+
+    <script src="js/employee-directory.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="OneCloud Employee Attendance Management"
+    >
+
+    <title>Attendance Management | OneCloud</title>
+
+    <!-- Attendance CSS -->
+    <link rel="stylesheet" href="css/employee-attendance.css">
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- Top Navigation -->
+
+    <header class="topbar">
+
+        <a href="dashboard.html" class="brand">
+
+            <i class="fa-solid fa-cloud"></i>
+
+            <span>OneCloud</span>
+
+        </a>
+
+        <nav>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="employee-management.html">
+                Employee Management
+            </a>
+
+            <a href="employee-directory.html">
+                Employee Directory
+            </a>
+
+            <a href="employee-attendance.html" class="active">
+                Attendance
+            </a>
+
+        </nav>
+
+    </header>
+
+    <!-- Main Page -->
+
+    <main class="page-shell">
+
+        <!-- Page Heading -->
+
+        <section class="page-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    HRMS MODULE
+                </span>
+
+                <h1>
+                    Attendance Management
+                </h1>
+
+                <p>
+                    Mark, update, reset and monitor employee attendance
+                    from one centralized dashboard.
+                </p>
+
+            </div>
+
+            <!-- Current Date -->
+
+            <div class="date-card">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <div>
+
+                    <small>Current Date</small>
+
+                    <strong id="currentDate">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Attendance Summary Cards -->
+
+        <section class="summary-grid">
+
+            <!-- Total Employees -->
+
+            <article class="summary-card total">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <div>
+
+                    <small>Total Employees</small>
+
+                    <strong id="totalCount">0</strong>
+
+                </div>
+
+            </article>
+
+            <!-- Present -->
+
+            <article class="summary-card present">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <div>
+
+                    <small>Present</small>
+
+                    <strong id="presentCount">0</strong>
+
+                </div>
+
+            </article>
+
+            <!-- Absent -->
+
+            <article class="summary-card absent">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-circle-xmark"></i>
+
+                </div>
+
+                <div>
+
+                    <small>Absent</small>
+
+                    <strong id="absentCount">0</strong>
+
+                </div>
+
+            </article>
+
+            <!-- Half Day -->
+
+            <article class="summary-card half-day">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <small>Half Day</small>
+
+                    <strong id="halfDayCount">0</strong>
+
+                </div>
+
+            </article>
+
+            <!-- Work From Home -->
+
+            <article class="summary-card wfh">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-house-laptop"></i>
+
+                </div>
+
+                <div>
+
+                    <small>Work From Home</small>
+
+                    <strong id="wfhCount">0</strong>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- Search and Filter Controls -->
+
+        <section class="filters-card">
+
+            <!-- Search -->
+
+            <div class="search-field">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search by employee name or ID..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+            <!-- Department Filter -->
+
+            <select
+                id="departmentFilter"
+                aria-label="Filter by department"
+            >
+
+                <option value="all">
+                    All Departments
+                </option>
+
+            </select>
+
+            <!-- Attendance Status Filter -->
+
+            <select
+                id="attendanceFilter"
+                aria-label="Filter by attendance status"
+            >
+
+                <option value="all">
+                    All Attendance
+                </option>
+
+                <option value="Unmarked">
+                    Unmarked
+                </option>
+
+                <option value="Present">
+                    Present
+                </option>
+
+                <option value="Absent">
+                    Absent
+                </option>
+
+                <option value="Half Day">
+                    Half Day
+                </option>
+
+                <option value="Work From Home">
+                    Work From Home
+                </option>
+
+            </select>
+
+            <!-- Reset Filters -->
+
+            <button
+                type="button"
+                id="resetFilters"
+            >
+
+                <i class="fa-solid fa-rotate-left"></i>
+
+                Reset Filters
+
+            </button>
+
+        </section>
+
+        <!-- Feedback Message -->
+
+        <div
+            id="message"
+            class="message"
+            role="alert"
+            aria-live="polite"
+        ></div>
+
+        <!-- Attendance Table -->
+
+        <section class="table-card">
+
+            <div class="table-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        DAILY ATTENDANCE
+                    </span>
+
+                    <h2>
+                        Employee Attendance Records
+                    </h2>
+
+                    <p>
+                        Select a status and use the available action button.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Employee ID
+                            </th>
+
+                            <th>
+                                Employee Name
+                            </th>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <th>
+                                Select Attendance
+                            </th>
+
+                            <th>
+                                Attendance Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="attendanceTable">
+
+                        <!-- JavaScript generates employee rows here -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Shared Employee Data -->
+    <script src="js/employee-data.js"></script>
+
+    <!-- Attendance Functionality -->
+    <script src="js/employee-attendance.js"></script>
+
+</body>
+</html>
