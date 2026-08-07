@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="OneCloud Employee Profile and Reports"
+    >
+
+    <title>Employee Profile | OneCloud</title>
+
+    <link
+        rel="stylesheet"
+        href="css/hr-common.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- Top Navigation -->
+
+    <header class="topbar">
+
+        <a
+            href="hr-dashboard.html"
+            class="brand"
+        >
+
+            <i class="fa-solid fa-cloud"></i>
+
+            <span>OneCloud</span>
+
+        </a>
+
+        <nav>
+
+            <a href="hr-dashboard.html">
+                HR Dashboard
+            </a>
+
+            <a href="leave-management.html">
+                Apply Leave
+            </a>
+
+            <a href="leave-approval.html">
+                Leave Approval
+            </a>
+
+            <a
+                href="employee-profile.html"
+                class="active"
+            >
+                Profile
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main class="shell">
+
+        <!-- Page Heading -->
+
+        <section class="hero profile-hero">
+
+            <div>
+
+                <span class="eyebrow">
+                    EMPLOYEE REPORTS
+                </span>
+
+                <h1>
+                    Employee Profile
+                </h1>
+
+                <p>
+                    View employee details, attendance information,
+                    leave balances and reporting information.
+                </p>
+
+            </div>
+
+
+            <!-- Employee Selector -->
+
+            <div class="profile-selector">
+
+                <label for="employeeSelect">
+                    Select Employee
+                </label>
+
+                <select id="employeeSelect">
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- Profile Information -->
+
+        <section class="profile-grid">
+
+            <!-- Left Profile Card -->
+
+            <article class="card profile-card">
+
+                <!-- Employee Photo -->
+
+                <div class="profile-photo-wrapper">
+
+                    <div
+                        id="photoFallback"
+                        class="profile-photo-fallback"
+                    >
+                        AK
+                    </div>
+
+                    <img
+                        id="profilePhoto"
+                        class="profile-photo"
+                        src=""
+                        alt="Employee Profile"
+                    >
+
+                </div>
+
+
+                <!-- Employee Status -->
+
+                <span
+                    id="profileStatus"
+                    class="profile-status active"
+                >
+                    Active
+                </span>
+
+
+                <h2 id="profileName">
+                    Employee Name
+                </h2>
+
+                <p
+                    id="profileRole"
+                    class="profile-role"
+                >
+                    Employee Role
+                </p>
+
+
+                <div class="profile-contact">
+
+                    <p>
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <span id="profileEmail">
+                            employee@onecloud.com
+                        </span>
+
+                    </p>
+
+                    <p>
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <span id="profilePhone">
+                            0000000000
+                        </span>
+
+                    </p>
+
+                </div>
+
+
+                <!-- Profile Buttons -->
+
+                <div class="actions profile-actions">
+
+                    <button
+                        type="button"
+                        class="btn primary"
+                        onclick="window.print()"
+                    >
+
+                        <i class="fa-solid fa-print"></i>
+
+                        Print Profile
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="downloadButton"
+                        class="btn secondary"
+                    >
+
+                        <i class="fa-solid fa-download"></i>
+
+                        Download Profile
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- Right Employee Details -->
+
+            <article class="card form-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            EMPLOYEE DETAILS
+                        </span>
+
+                        <h2>
+                            Profile Information
+                        </h2>
+
+                    </div>
+
+                    <div class="heading-icon">
+
+                        <i class="fa-solid fa-address-card"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="detailsGrid"
+                    class="details-grid"
+                >
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- Report Cards -->
+
+        <section
+            id="reportGrid"
+            class="report-grid"
+        >
+
+        </section>
+
+
+        <!-- Leave History -->
+
+        <section class="card table-card profile-history">
+
+            <div class="table-head">
+
+                <div>
+
+                    <span class="eyebrow">
+                        LEAVE REPORT
+                    </span>
+
+                    <h2>
+                        Leave History
+                    </h2>
+
+                    <p>
+                        Leave requests submitted by the selected employee.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Leave Type
+                            </th>
+
+                            <th>
+                                From Date
+                            </th>
+
+                            <th>
+                                To Date
+                            </th>
+
+                            <th>
+                                Total Days
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="leaveHistory">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Shared HR Data -->
+
+    <script src="js/hr-data.js"></script>
+
+
+    <!-- Profile Functionality -->
+
+    <script src="js/employee-profile.js"></script>
+
+</body>
+
+</html>

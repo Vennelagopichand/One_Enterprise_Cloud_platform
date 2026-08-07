@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>HR Dashboard | OneCloud</title>
+
+    <link rel="stylesheet" href="css/hr-common.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+
+<header class="topbar">
+
+    <a href="hr-dashboard.html" class="brand">
+        <i class="fa-solid fa-cloud"></i>
+        <span>OneCloud</span>
+    </a>
+
+    <nav>
+
+        <a
+            href="hr-dashboard.html"
+            class="active"
+        >
+            HR Dashboard
+        </a>
+
+        <a href="leave-management.html">
+            Apply Leave
+        </a>
+
+        <a href="leave-approval.html">
+            Leave Approval
+        </a>
+
+        <a href="employee-profile.html">
+            Profile
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="shell">
+
+    <section class="hero">
+
+        <div>
+
+            <span class="eyebrow">
+                HR ANALYTICS
+            </span>
+
+            <h1>HR Dashboard</h1>
+
+            <p>
+                Real-time statistics from employees,
+                attendance and leave modules.
+            </p>
+
+        </div>
+
+        <div class="date-box">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <div>
+                <small>Current Date</small>
+                <strong id="currentDate"></strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Dynamic Dashboard Statistics -->
+
+    <section
+        class="summary-grid dashboard-summary"
+        id="stats"
+    ></section>
+
+
+    <!-- Recent Activities -->
+
+    <section class="card table-card">
+
+        <div class="table-head">
+
+            <div>
+
+                <span class="eyebrow">
+                    RECENT UPDATES
+                </span>
+
+                <h2>Recent Activities</h2>
+
+                <p>
+                    Recently added employees, leave requests
+                    and attendance activities.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Activity Type</th>
+                        <th>Description</th>
+                        <th>Date & Time</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="activityTable"></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="js/hr-data.js"></script>
+<script src="js/hr-dashboard.js"></script>
+
+</body>
+
+</html>

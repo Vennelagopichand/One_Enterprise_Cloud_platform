@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Leave Approval | OneCloud</title>
+
+    <link rel="stylesheet" href="css/hr-common.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+
+<header class="topbar">
+
+    <a href="hr-dashboard.html" class="brand">
+        <i class="fa-solid fa-cloud"></i>
+        <span>OneCloud</span>
+    </a>
+
+    <nav>
+
+        <a href="hr-dashboard.html">
+            HR Dashboard
+        </a>
+
+        <a href="leave-management.html">
+            Apply Leave
+        </a>
+
+        <a
+            href="leave-approval.html"
+            class="active"
+        >
+            Leave Approval
+        </a>
+
+        <a href="employee-profile.html">
+            Profile
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="shell">
+
+    <section class="hero">
+
+        <div>
+
+            <span class="eyebrow">
+                HR APPROVAL
+            </span>
+
+            <h1>Leave Approval Dashboard</h1>
+
+            <p>
+                Review and manage employee leave requests.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Summary Cards -->
+
+    <section class="summary-grid three-columns">
+
+        <article class="card summary-card pending-summary">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+
+            <div>
+                <small>Pending Requests</small>
+                <strong id="pendingCount">0</strong>
+            </div>
+
+        </article>
+
+
+        <article class="card summary-card approved-summary">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div>
+                <small>Approved Leaves</small>
+                <strong id="approvedCount">0</strong>
+            </div>
+
+        </article>
+
+
+        <article class="card summary-card rejected-summary">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+
+            <div>
+                <small>Rejected Leaves</small>
+                <strong id="rejectedCount">0</strong>
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- Table -->
+
+    <section class="card table-card">
+
+        <div class="table-head">
+
+            <div>
+
+                <span class="eyebrow">
+                    LEAVE REQUESTS
+                </span>
+
+                <h2>All Leave Requests</h2>
+
+                <p>
+                    Approve, reject or cancel leave requests
+                    without refreshing the page.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Employee Name</th>
+                        <th>Department</th>
+                        <th>Leave Type</th>
+                        <th>Total Days</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="leaveTable"></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="js/hr-data.js"></script>
+<script src="js/leave-approval.js"></script>
+
+</body>
+</html>
